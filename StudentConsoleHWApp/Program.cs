@@ -21,7 +21,7 @@ namespace StudentConsoleHWApp
                 {
                     case "add":
                         {
-                            Console.WriteLine(AddCommand.Add());
+                            AddCommand.Execute();
                             break;
                         }
                     case "edit":
