@@ -29,7 +29,7 @@ namespace StudentConsoleHWApp.Commands
 
             repository.Add(newStudent);
 
-
+            return "Студент создан";
             
 
 
