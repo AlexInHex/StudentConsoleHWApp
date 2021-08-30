@@ -1,12 +1,13 @@
 ﻿using System;
 using StudentConsoleHWApp.Commands;
+using StudentsConsoleApp;
 
 namespace StudentConsoleHWApp
 {
     class Program
     {
 
-        CommandParser commandParser = new CommandParser();
+        CommandsParser commandParser = new CommandsParser();
         static void Main(string[] args)
         {
             Console.OutputEncoding = System.Text.Encoding.UTF8;
