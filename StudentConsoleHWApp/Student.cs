@@ -49,18 +49,7 @@ namespace StudentConsoleHWApp
                 
             }
         }
-        public int Id
-        {
-            get
-            {
-                return id;
-            }
-            set
-            {
-                
-            }
-
-        }
+        public int Id   {get;}
 
         public Student(int id, string n, string surN, string g, int a)
         {
@@ -78,6 +67,14 @@ namespace StudentConsoleHWApp
             g = gender;
             a = age;
             
+        }
+
+        public void Update(Student student)
+        {
+            name = student.Name;
+            surname = student.Surname;
+            gender = student.Gender;
+            age = student.Age;
         }
     }
 }

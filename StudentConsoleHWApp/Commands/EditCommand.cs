@@ -14,7 +14,21 @@ namespace StudentConsoleHWApp.Commands
 
         public override string Execute()
         {
+            string userText = Console.ReadLine();
+            string[] parametrs = userText.Split(',');
 
+
+            Student student = new Student(
+                int.Parse(parametrs[1]),
+                parametrs[2], 
+                parametrs[3],
+                parametrs[4],
+                int.Parse(parametrs[5])
+            );
+
+            bool result = repository.Edit(student);
+
+            return result ? "Студент изменен" : $"Студент {parametrs[1]} Не найден";
 
         }
     }
