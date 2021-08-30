@@ -18,9 +18,6 @@ namespace StudentConsoleHWApp
 
         public Status Add(Student student)
         {            
-
-
-
             for (int i = 0; i < students.Length; i++)
             {
                 if (students[i] == null)
@@ -31,8 +28,7 @@ namespace StudentConsoleHWApp
                     students[i] = student;
 
                     return Status.Yes;
-                }
-               
+                }                
             } 
             return Status.No;
         }

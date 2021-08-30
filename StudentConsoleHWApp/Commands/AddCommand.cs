@@ -27,7 +27,9 @@ namespace StudentConsoleHWApp.Commands
 
             Student newStudent = new Student(newStudentName, newStudentSurname, newStudentGender, newStudentAge);
 
-            repository.Add(newStudent);
+
+            return "Студент создан";
+            
 
             return "Студент создан";
             
