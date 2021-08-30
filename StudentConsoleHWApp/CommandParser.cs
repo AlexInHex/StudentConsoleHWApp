@@ -20,7 +20,7 @@ namespace StudentsConsoleApp
         public Command Parse(string input)
         {
             var inpurArr = input.Split();
-            string[] parametrs = new string[4];
+            string[] parametrs = new string[6];
             int index = 0;
 
             foreach (var item in inpurArr)
@@ -39,9 +39,10 @@ namespace StudentsConsoleApp
                     break;
                 default:
                     return new Command(repository, parametrs);
+                 //65856868563
             }
 
-
+            
         }
     }
 }
