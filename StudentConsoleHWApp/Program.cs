@@ -7,22 +7,25 @@ namespace StudentConsoleHWApp
     class Program
     {
 
-        CommandsParser commandParser = new CommandsParser();
+        
         static void Main(string[] args)
         {
             Console.OutputEncoding = System.Text.Encoding.UTF8;
 
-            Console.WriteLine("Список команд: add - добавить студента, edit - изменить студента, ");
+            CommandsParser commandParser = new CommandsParser(Repository.repository);
 
-            string command;
+            Console.WriteLine("Список команд: add - добавить студента, edit - изменить студента, delete - удалить студента, find - найти студента, get - получить студента по id, list - вывести всех студентов, random - получить случайного студента. ");
+
+            
+            
             while (true)
             {
-                command = Console.ReadLine();
-                switch (command)
+                switch ()
                 {
-                    case "add":
+                    case "ADD":
                         {
-                            AddCommand.Execute();
+                            
+                            
                             break;
                         }
                     case "edit":

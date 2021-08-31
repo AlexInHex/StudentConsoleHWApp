@@ -19,7 +19,7 @@ namespace StudentsConsoleApp
 
         public Command Parse(string input)
         {
-            var inpurArr = input.Split();
+            var inpurArr = input.Split(",");
             string[] parametrs = new string[6];
             int index = 0;
 
@@ -36,10 +36,24 @@ namespace StudentsConsoleApp
             {
                 case "ADD":
                     return new AddCommand(repository, parametrs);
-                    break;
+                case "EDIT":
+                    return new EditCommand(repository, parametrs);
+                case "LIST":
+                    return new ListCommand(repository, parametrs);
+                case "DELETE":
+                    return new DeleteCommand(repository, parametrs);
+                case "FIND":
+                    return new FindCommand(repository, parametrs);
+                case "GET":
+                    return new GetCommand(repository, parametrs);
+                case "RANDOM":
+                    return new RandomCommand();
+
+
+
                 default:
                     return new Command(repository, parametrs);
-                 //65856868563
+                 
             }
 
             

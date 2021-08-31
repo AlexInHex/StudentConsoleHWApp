@@ -14,12 +14,10 @@ namespace StudentConsoleHWApp.Commands
         { }
 
         public override string Execute()
-        {
-            
+        {            
             string userText = Console.ReadLine();
             string[] parametrs = userText.Split(',');
-            
-                        
+                                    
             string newStudentName = parametrs[0];
             string newStudentSurname = parametrs[1];
             string newStudentGender = parametrs[2];
@@ -27,18 +25,7 @@ namespace StudentConsoleHWApp.Commands
 
             Student newStudent = new Student(newStudentName, newStudentSurname, newStudentGender, newStudentAge);
 
-
-            return "Студент создан";
-            
-
-            return "Студент создан";
-            
-
-
-            
-            
-
-            
+            return "Студент создан";                                                                        
         }
     }
 }
