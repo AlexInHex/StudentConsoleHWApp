@@ -12,32 +12,26 @@ namespace StudentConsoleHWApp.Commands
             : base(repository, parametrs)
         { }
 
-        public override string Execute()
+      /*  public override string Execute()
         {
-            int maxValue = 0;
-            bool result = false;
+            
+
+            List<Student> existStudents = new List<Student>();
 
             for (int i = 0; i < Repository.students.Length; i++)
             {
-                if (maxValue < Repository.students[i].Id)
-                {
-                    maxValue = Repository.students[i].Id;
-                }
-            }
-            
-            Random rand = new Random();
-            int id = rand.Next(0, maxValue);
-            
-
-            for (int i = 0; i < Repository.students.Length; i++)
-            {
-                if (id == Repository.students[i].Id)
-                {
-                    result = true;
-                }
+                existStudents.Add(Repository.students[i]);
             }
 
-            return result ? $"Случайный студент {Repository.students[id]} найден" : $"Студента {Repository.students[id]} не существует ";
-        }
+            
+
+
+
+           
+            
+
+
+
+        }*/
     }
 }

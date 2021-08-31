@@ -46,8 +46,8 @@ namespace StudentsConsoleApp
                     return new FindCommand(repository, parametrs);
                 case "GET":
                     return new GetCommand(repository, parametrs);
-                case "RANDOM":
-                    return new RandomCommand();
+                //case "RANDOM":
+                  //  return new RandomCommand();
 
 
 

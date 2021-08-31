@@ -26,7 +26,7 @@ namespace StudentConsoleHWApp.Commands
                 }
             }
 
-            return result ? $"Студент {Repository.students[id]} найден" : $"Студента {Repository.students[id]} не существует ";
+            return result ? $"Студент {id} найден" : $"Студента {id} не существует ";
             
         }
     }
