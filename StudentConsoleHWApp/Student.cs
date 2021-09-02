@@ -8,43 +8,43 @@ namespace StudentConsoleHWApp
 {
     class Student
     {
-        private string name;
+       /*private string name;
         private string surname;
         private string gender;
         private int age;
-        private int id;
+        private int id;*/
 
-        public string Name { get; }
-        public string Surname { get; }
-        public string Gender { get; }
+        public string Name { get; private set; }
+        public string Surname { get; private set; }
+        public string Gender { get; private set; }
         public int Age { get; set; }
         public int Id { get; set; }            
 
         public Student(int idStudent, string nameStudent, string surNameStudent, string genderStudent, int ageStudent)
         {
-            name = nameStudent;
-            surname = surNameStudent;
-            gender = genderStudent;
-            age = ageStudent;
-            id = idStudent;
+            Name = nameStudent;
+            Surname = surNameStudent;
+            Gender = genderStudent;
+            Age = ageStudent;
+            Id = idStudent;
         }
 
         public Student(string nameStudent, string surNameStudent, string genderStudent, int ageStudent)
             : this (0, nameStudent, surNameStudent, genderStudent, ageStudent)
         {
-            name = nameStudent;
-            surname = surNameStudent;
-            gender = genderStudent;
-            age = ageStudent;
+            Name = nameStudent;
+            Surname = surNameStudent;
+            Gender = genderStudent;
+            Age = ageStudent;
 
         }
 
         public void Update(Student student)
         {
-            name = student.Name;
-            surname = student.Surname;
-            gender = student.Gender;
-            age = student.Age;
+            Name = student.Name;
+            Surname = student.Surname;
+            Gender = student.Gender;
+            Age = student.Age;
         }
     }
 }
