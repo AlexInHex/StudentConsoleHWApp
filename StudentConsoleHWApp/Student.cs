@@ -17,7 +17,7 @@ namespace StudentConsoleHWApp
         public string Name { get; private set; }
         public string Surname { get; private set; }
         public string Gender { get; private set; }
-        public int Age { get; set; }
+        public int Age { get; private set;}
         public int Id { get; set; }            
 
         public Student(int idStudent, string nameStudent, string surNameStudent, string genderStudent, int ageStudent)
