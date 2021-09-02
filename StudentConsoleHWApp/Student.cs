@@ -32,10 +32,10 @@ namespace StudentConsoleHWApp
         public Student(string nameStudent, string surNameStudent, string genderStudent, int ageStudent)
             : this (0, nameStudent, surNameStudent, genderStudent, ageStudent)
         {
-            Name = nameStudent;
+           /* Name = nameStudent;
             Surname = surNameStudent;
             Gender = genderStudent;
-            Age = ageStudent;
+            Age = ageStudent;*/
 
         }
 
