@@ -12,26 +12,19 @@ namespace StudentConsoleHWApp.Commands
             : base(repository, parametrs)
         { }
 
-      /*  public override string Execute()
-        {
-            
+            public override string Execute()
+        { 
+            Student[] students = repository.List();
 
-            List<Student> existStudents = new List<Student>();
-
-            for (int i = 0; i < Repository.students.Length; i++)
+            if (students.Length == 0)
             {
-                existStudents.Add(Repository.students[i]);
+                return "Нет студентов";
             }
 
-            
+            Random rnd = new Random();
+            int index = rnd.Next(0, students.Length);
 
-
-
-           
-            
-
-
-
-        }*/
+            return students[index].ToString();
+        }
     }
 }

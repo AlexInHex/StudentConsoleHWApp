@@ -21,11 +21,13 @@ namespace StudentsConsoleApp
         {
             var inpurArr = input.Split(",");
             string[] parametrs = new string[6];
-            int index = 0;
+            int index = 0;            
+
+
 
             foreach (var item in inpurArr)
             {
-                if (string.IsNullOrEmpty(item) && index < parametrs.Length)
+                if (string.IsNullOrEmpty(item) == false && index < parametrs.Length)
                 {
                     parametrs[index] = item;
                     index++;
@@ -46,17 +48,11 @@ namespace StudentsConsoleApp
                     return new FindCommand(repository, parametrs);
                 case "GET":
                     return new GetCommand(repository, parametrs);
-                //case "RANDOM":
-                  //  return new RandomCommand();
-
-
-
+                case "RANDOM":
+                    return new RandomCommand(repository, parametrs);
                 default:
-                    return new Command(repository, parametrs);
-                 
-            }
-
-            
+                    return new Command(repository, parametrs);                 
+            }            
         }
     }
 }

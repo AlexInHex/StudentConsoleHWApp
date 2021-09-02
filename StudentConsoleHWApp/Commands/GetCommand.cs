@@ -16,15 +16,8 @@ namespace StudentConsoleHWApp.Commands
         {
             int id = int.Parse(Console.ReadLine());
             bool result = false;
-           
 
-            for (int i = 0; i < Repository.students.Length; i++)
-            {
-                if (id == Repository.students[i].Id)
-                {                  
-                    result = true;                                        
-                }
-            }
+            Repository.repository.Get(id);
 
             return result ? $"Студент {id} найден" : $"Студента {id} не существует ";
             

@@ -16,15 +16,8 @@ namespace StudentConsoleHWApp.Commands
         {
             int id = int.Parse(Console.ReadLine());
             bool result = false;
-            for (int i = 0; i < Repository.students.Length; i++)
-            {
-                if (id == Repository.students[i].Id)
-                {
-                    Repository.students[i] = null;
-                    result = true;
-                    
-                }
-            }
+
+            Repository.repository.Delete(id);
 
             if (result)
             {

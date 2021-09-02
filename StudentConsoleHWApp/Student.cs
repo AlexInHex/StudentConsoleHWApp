@@ -20,21 +20,22 @@ namespace StudentConsoleHWApp
         public int Age { get; set; }
         public int Id { get; set; }            
 
-        public Student(int id, string n, string surN, string g, int a)
+        public Student(int idStudent, string nameStudent, string surNameStudent, string genderStudent, int ageStudent)
         {
-            name = n;
-            surname = surN;
-            gender = g;
-            age = a;
-            this.id = id;
+            name = nameStudent;
+            surname = surNameStudent;
+            gender = genderStudent;
+            age = ageStudent;
+            id = idStudent;
         }
 
-        public Student(string n, string surN, string g, int a): this (0, n, surN, g, a)
+        public Student(string nameStudent, string surNameStudent, string genderStudent, int ageStudent)
+            : this (0, nameStudent, surNameStudent, genderStudent, ageStudent)
         {
-            name = n;
-            surname = surN;
-            gender = g;
-            age = a;
+            name = nameStudent;
+            surname = surNameStudent;
+            gender = genderStudent;
+            age = ageStudent;
 
         }
 

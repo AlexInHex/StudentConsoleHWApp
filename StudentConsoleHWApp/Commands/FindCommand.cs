@@ -14,20 +14,9 @@ namespace StudentConsoleHWApp.Commands
 
         public override string Execute()
         {
-            string userText = Console.ReadLine();
-            Student[] findStudents = new Student[Repository.students.Length];
-            int count = 0;
+            string userText = Console.ReadLine();                        
 
-            for (int i = 0; i < Repository.students.Length; i++)
-            {
-                if (Repository.students[i].Name.Contains(userText, StringComparison.OrdinalIgnoreCase) == true ||
-                    Repository.students[i].Surname.Contains(userText, StringComparison.OrdinalIgnoreCase) == true)
-                {
-                    findStudents[count++] = Repository.students[i];
-                } 
-            }
-            Array.Resize(ref findStudents, count);
-            return $"Найдено {count} студентов. ";
+            return $"Найдено {Repository.repository.Find(userText)} студентов. ";
         }
     }
 }
