@@ -8,7 +8,7 @@ using StudentConsoleHWApp.Commands;
 
 namespace StudentConsoleHWApp.Validator
 {
-    public abstract class BaseValidator : IValidator
+    public abstract class BaseValidator : Command, IValidator
     {
        
 
