@@ -14,12 +14,12 @@ namespace StudentConsoleHWApp.Commands
 
         public override string Execute()
         {
-            int id = int.Parse(Console.ReadLine());
+            
             bool result = false;
 
-            Repository.repository.Get(id);
+            repository.Get(int.Parse(parametrs[1]));
 
-            return result ? $"Студент {id} найден" : $"Студента {id} не существует ";
+            return result ? $"Студент {int.Parse(parametrs[1])} найден" : $"Студента {int.Parse(parametrs[1])} не существует ";
             
         }
     }

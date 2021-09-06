@@ -14,10 +14,10 @@ namespace StudentConsoleHWApp.Commands
 
         public override string Execute()
         {
-            int id = int.Parse(Console.ReadLine());
+            
             bool result = false;
 
-            Repository.repository.Delete(id);
+            repository.Delete(int.Parse(parametrs[1]));
 
             if (result)
             {
@@ -25,7 +25,7 @@ namespace StudentConsoleHWApp.Commands
             }
             else
             {
-                return $"Студент {Repository.students[id]} не найден";
+                return $"Студент {Repository.students[int.Parse(parametrs[1])]} не найден";
             }
         }
     }

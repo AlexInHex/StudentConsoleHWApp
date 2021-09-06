@@ -22,7 +22,7 @@ namespace StudentConsoleHWApp.Commands
 
             Student newStudent = new Student(newStudentName, newStudentSurname, newStudentGender, newStudentAge);
 
-            Repository.repository.Add(newStudent);
+            repository.Add(newStudent);
 
             return "Студент создан";                                                                        
         }

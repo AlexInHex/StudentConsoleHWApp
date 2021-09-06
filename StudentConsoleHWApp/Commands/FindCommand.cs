@@ -13,10 +13,8 @@ namespace StudentConsoleHWApp.Commands
         { }
 
         public override string Execute()
-        {
-            string userText = Console.ReadLine();                        
-
-            return $"Найдено {Repository.repository.Find(userText)} студентов. ";
+        {                                  
+            return $"Найдено {repository.Find(parametrs[1])} студентов. ";
         }
     }
 }

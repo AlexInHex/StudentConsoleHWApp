@@ -13,11 +13,7 @@ namespace StudentConsoleHWApp.Commands
         { }
 
         public override string Execute()
-        {
-            string userText = Console.ReadLine();
-            string[] parametrs = userText.Split(',');
-
-
+        {                        
             Student student = new Student(
                 int.Parse(parametrs[1]),
                 parametrs[2], 

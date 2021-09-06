@@ -27,7 +27,7 @@ namespace StudentsConsoleApp
 
             foreach (var item in inpurArr)
             {
-                if (string.IsNullOrEmpty(item) == false && index < parametrs.Length)
+                if (!string.IsNullOrEmpty(item) && index < parametrs.Length)
                 {
                     parametrs[index] = item;
                     index++;

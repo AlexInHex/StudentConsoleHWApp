@@ -10,8 +10,7 @@ namespace StudentConsoleHWApp
 
 
     class Repository
-    {
-        internal static Repository repository;
+    {        
         public static Student[] students = new Student[10];
         private int nextId = 1;
         
