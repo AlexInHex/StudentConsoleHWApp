@@ -7,10 +7,11 @@ using StudentConsoleHWApp.Validator;
 
 namespace StudentConsoleHWApp.Commands
 {
-    class Command
+    abstract class Command
     {
         public string[] parametrs;
         public Repository repository;
+        public IValidator validator;
         
         public Command(Repository repository, string[] parametrs)
 
@@ -20,9 +21,24 @@ namespace StudentConsoleHWApp.Commands
             
         }
 
-        public virtual string Execute()
+        public abstract string Execute();
+
+
+        public string ExecutWithValidate()
         {
-            return "Нечего делать!";
-        }       
+            if (validator == null)
+            {
+                return Execute();
+            }
+            else if (validator.Validate())
+            {
+                return Execute();
+            }
+            else
+            {
+                return validator.ErrorMessage;
+            }
+        }
+            
     }
 }

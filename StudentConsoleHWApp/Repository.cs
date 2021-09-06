@@ -6,9 +6,6 @@ using System.Threading.Tasks;
 
 namespace StudentConsoleHWApp
 {
-
-
-
     class Repository
     {        
         public static Student[] students = new Student[10];
@@ -102,10 +99,6 @@ namespace StudentConsoleHWApp
 
             Array.Resize(ref result, count);
             return result;
-        }        
+        }                   
     }
-
-
-
-
 }

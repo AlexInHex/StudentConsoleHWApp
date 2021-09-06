@@ -8,45 +8,29 @@ using StudentConsoleHWApp.Commands;
 
 namespace StudentConsoleHWApp.Validator
 {
-    public abstract class BaseValidator : Command, IValidator
-    {
-       
-
-        public string ErrorMessage { get;  set; }
-        public string[] param;
+    public abstract class BaseValidator : IValidator
+    {       
+       private StringBuilder sb = new StringBuilder();
+        string IValidator.ErrorMessage { get { return sb.ToString();} }
+        public string[] param;       
 
         public BaseValidator(string[] param)
         {
             this.param = param;
-        }
-
-        public virtual string ValidationExecute()
-        {
-            return "Ничего не сделано. ";
-        }
-
-        public bool CommandValidation(string command)
-        {
-            foreach (char symbol in command)
-            {
-                if (Char.IsLetter(symbol))
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
+        }               
 
         public bool IdValidation(string id)
         {
             foreach (char sumbol in id)
             {
-                if (Char.IsDigit(sumbol))
+                if (Char.IsLetter(sumbol))
                 {
-                    return true;
+                    sb.AppendLine("Id не верный");
+                    return false;
                 }
             }
-            return false;
+            return true;
+
         }
 
         public bool NameValidation(string name)
@@ -55,6 +39,7 @@ namespace StudentConsoleHWApp.Validator
             {
                 if (Char.IsDigit(sumbol) && name.Length <= 50)
                 {
+                    sb.AppendLine("Имя не должно содержать цифры");
                     return false;
                 }
             }
@@ -67,6 +52,7 @@ namespace StudentConsoleHWApp.Validator
             {
                 if (Char.IsDigit(sumbol) && surname.Length <= 50 )
                 {
+                    sb.AppendLine("Фамилия не должна сожержать цифры");
                     return false;
                 }
             }
@@ -77,9 +63,10 @@ namespace StudentConsoleHWApp.Validator
         {
             foreach (char sumbol in age)
             {
-                if (Char.IsDigit(sumbol) && int.Parse(age) > 18 && int.Parse(age) < 100)
+                if (Char.IsLetter(sumbol) && int.Parse(age) > 18 && int.Parse(age) < 100)
                 {
-                    return true;
+                    sb.AppendLine("Возраст не должен содержать буквы и выходить из диапазона от 18 до 99 лет ");
+                    return false;
                 }
             }
             return false;
@@ -87,7 +74,7 @@ namespace StudentConsoleHWApp.Validator
 
         public bool GenderValidation(string gender)
         {
-            switch (gender.ToLower())
+            switch (gender.ToUpper())
             {
                 case "M":
                     return true;                  
@@ -97,11 +84,12 @@ namespace StudentConsoleHWApp.Validator
                     return true;                    
                 case "ЖЕН":
                     return true;                    
-                case "МУЖСКОЙ":
+                case "МУЖЧИНА":
                     return true;                    
-                case "ЖЕНСКИЙ":
+                case "ЖЕНЩИНА":
                     return true;                   
                 default:
+                    sb.AppendLine("Это абракадабра, введите свой пол.");
                     return false;                
             }
         }

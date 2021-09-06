@@ -13,19 +13,10 @@ namespace StudentConsoleHWApp.Validator
         public DeleteValidator(string[] parameters) : base(parameters)
         { }
 
-        public override string ValidationExecute()
-        {
-            if (CommandValidation(param[0]) && IdValidation(param[1]))
-            {
-                return "1";
-            }
-
-            return "0";
-        }
-
         public override bool Validate()
         {
-            return false;
-        }
+            return (IdValidation(param[1]));
+           
+        }        
     }
 }

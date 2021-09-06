@@ -10,7 +10,7 @@ namespace StudentConsoleHWApp.Validator
         public interface IValidator
         {
             public bool Validate();
-            public string ErrorMessage { get; set; }
+            public string ErrorMessage { get;}
         }
     
 }

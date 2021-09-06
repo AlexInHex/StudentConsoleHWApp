@@ -21,7 +21,7 @@ namespace StudentConsoleHWApp
                 string input = Console.ReadLine();
                 var parser = new CommandsParser(repository);
                 var command = parser.Parse(input);
-                var result = command.Execute();
+                var result = command.ExecutWithValidate();
             }
             
         }

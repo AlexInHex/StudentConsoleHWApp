@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using StudentConsoleHWApp.Validator;
 
 namespace StudentConsoleHWApp.Commands
 {
@@ -10,7 +11,9 @@ namespace StudentConsoleHWApp.Commands
     {
         public EditCommand(Repository repository, string[] parametrs)
             : base(repository, parametrs)
-        { }
+        {
+            validator = new DeleteValidator(parametrs);
+        }
 
         public override string Execute()
         {                        

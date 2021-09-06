@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using StudentConsoleHWApp.Commands;
 using StudentConsoleHWApp;
+using StudentConsoleHWApp.Validator;
 
 namespace StudentsConsoleApp
 {
@@ -19,7 +20,7 @@ namespace StudentsConsoleApp
 
         public Command Parse(string input)
         {
-            var inpurArr = input.Split(",");
+            var inpurArr = input.Split(" ");
             string[] parametrs = new string[6];
             int index = 0;            
 
@@ -32,11 +33,14 @@ namespace StudentsConsoleApp
                     parametrs[index] = item;
                     index++;
                 }
-            }
+            }            
+
+
 
             switch (parametrs[0].ToUpper())
             {
                 case "ADD":
+                    
                     return new AddCommand(repository, parametrs);
                 case "EDIT":
                     return new EditCommand(repository, parametrs);
@@ -51,7 +55,7 @@ namespace StudentsConsoleApp
                 case "RANDOM":
                     return new RandomCommand(repository, parametrs);
                 default:
-                    return new Command(repository, parametrs);                 
+                    return new UnknownCommand(repository, parametrs);                 
             }            
         }
     }
