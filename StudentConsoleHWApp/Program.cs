@@ -14,14 +14,15 @@ namespace StudentConsoleHWApp
 
             Console.WriteLine("Список команд: add - добавить студента, edit - изменить студента, delete - удалить студента, " +
                 "find - найти студента, get - получить студента по id, list - вывести всех студентов," +
-                " random - получить случайного студента. ");   
-            
+                " random - получить случайного студента. ");                           
+
             while (true)
             {
                 string input = Console.ReadLine();
                 var parser = new CommandsParser(repository);
                 var command = parser.Parse(input);
                 var result = command.ExecutWithValidate();
+                Console.WriteLine(result);
             }
             
         }

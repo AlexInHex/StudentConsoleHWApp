@@ -46,5 +46,10 @@ namespace StudentConsoleHWApp
             Gender = student.Gender;
             Age = student.Age;
         }
+
+        public override string ToString()
+        {
+            return $"ID студента: {Id}, имя: {Name}, фамилия: {Surname}, пол: {Gender}, возраст: {Age}. ";
+        }
     }
 }

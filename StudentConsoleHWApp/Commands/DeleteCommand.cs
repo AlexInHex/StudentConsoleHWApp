@@ -16,13 +16,12 @@ namespace StudentConsoleHWApp.Commands
         }
 
         public override string Execute()
-        {
-            
+        {            
             bool result = false;
 
             repository.Delete(int.Parse(parametrs[1]));
 
-            if (result)
+            if (!result)
             {
                 return "Студент удален";
             }

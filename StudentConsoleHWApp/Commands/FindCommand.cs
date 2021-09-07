@@ -12,7 +12,7 @@ namespace StudentConsoleHWApp.Commands
         public FindCommand(Repository repository, string[] parametrs)
             : base(repository, parametrs)
         {
-            validator = new DeleteValidator(parametrs);
+            validator = new FindValidator(parametrs);
         }
 
         public override string Execute()

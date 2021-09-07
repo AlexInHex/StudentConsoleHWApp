@@ -17,7 +17,16 @@ namespace StudentConsoleHWApp.Commands
         }
 
         public override string Execute()
-        {                                                                      
+        {     
+            
+            for (int i = 0; i < parametrs.Length - 1; i++)
+            {
+                if (parametrs[i] == null)
+                {
+                    return "Введены не все параметры команды add.";
+                }
+            }
+
             string newStudentName = parametrs[1];
             string newStudentSurname = parametrs[2];
             string newStudentGender = parametrs[3];

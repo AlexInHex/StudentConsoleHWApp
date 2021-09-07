@@ -13,15 +13,24 @@ namespace StudentConsoleHWApp.Commands
         { }
 
         public override string Execute()
-        {
-            StringBuilder stringBuilder = new StringBuilder();
+        {           
+            var list = repository.List();
 
-            foreach (var student in repository.List())
+            if (list.Length == 0)
             {
-                stringBuilder.AppendLine(student.ToString());               
+                return "список пуст";
             }
+            else
+            {
+                StringBuilder stringBuilder = new StringBuilder();
 
-            return stringBuilder.ToString();
+                foreach (var student in list)
+                {
+                    stringBuilder.AppendLine(student.ToString());
+                }
+
+                return stringBuilder.ToString();
+            }            
         }
     }
 }
