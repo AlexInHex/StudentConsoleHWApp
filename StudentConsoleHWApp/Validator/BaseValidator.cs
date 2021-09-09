@@ -42,13 +42,22 @@ namespace StudentConsoleHWApp.Validator
 
         }
 
+        public bool StringNotNull(string str)
+        {
+            if (str == null)
+            {
+                return false;
+            }
+            return true;
+        }
+
         public bool NameValidation(string name)
         {
-            if (name != null)
+            if (StringNotNull(name) && name.Length <= 50)
             {
                 foreach (char sumbol in name)
                 {
-                    if (Char.IsDigit(sumbol) && name.Length <= 50)
+                    if (Char.IsDigit(sumbol))
                     {
                         sb.AppendLine("Имя не должно содержать цифры");
                         return false;
@@ -58,7 +67,7 @@ namespace StudentConsoleHWApp.Validator
             }
             else
             {
-                sb.AppendLine("Не введено имя");
+                sb.AppendLine("Введите имя не длиннее 50 символов. ");
                 return false;
             }
 
@@ -67,11 +76,11 @@ namespace StudentConsoleHWApp.Validator
 
         public bool SurnameValidation(string surname)
         {
-            if (surname != null)
+            if (StringNotNull(surname) && surname.Length <= 50)
             {
                 foreach (char sumbol in surname)
                 {
-                    if (Char.IsDigit(sumbol) && surname.Length <= 50)
+                    if (Char.IsDigit(sumbol) )
                     {
                         sb.AppendLine("Фамилия не должна сожержать цифры");
                         return false;
@@ -81,7 +90,7 @@ namespace StudentConsoleHWApp.Validator
             }
             else
             {
-                sb.AppendLine("Фамилия не введена.");
+                sb.AppendLine("Введите фамилию не длиннее 50 символов.");
                 return false;
             }
             
@@ -89,65 +98,40 @@ namespace StudentConsoleHWApp.Validator
 
         public bool AgeValidation(string age)
         {
-            if (age != null)
+            if (StringNotNull(age) && int.Parse(age) > 18 && int.Parse(age) < 100)
             {
                 foreach (char sumbol in age)
                 {
-                    if (Char.IsDigit(sumbol) && int.Parse(age) > 18 && int.Parse(age) < 100)
+                    if (Char.IsDigit(sumbol))
                     {                        
                         return true;
                     }
                 }
-                sb.AppendLine("Возраст не должен содержать буквы и выходить из диапазона от 18 до 99 лет ");
+                sb.AppendLine("Возраст не должен содержать буквы");
                 return false;
             }
             else
             {
-                sb.AppendLine("Возраст не введен.");
+                sb.AppendLine("Введите возраст от 18 до 99 лет ");
                 return false;
             }           
         }
 
         public bool GenderValidation(string gender)
-        {
-            if (gender != null)
+        {           
+            string[] genderIsReal = {"М", "Ж", "МУЖ", "ЖЕН", "МУЖЧИНА", "ЖЕНЩИНА", "M", "W", "MAN", "WOMAN", "BOY", "GIRL", "МАЛЬЧИК",
+                "ДЕВОЧКА", "ПАРЕНЬ", "ДЕВУШКА"};
+
+            for (int i = 0; i < genderIsReal.Length; i++)
             {
-                switch (gender.ToUpper())
+                
+                if (StringNotNull(gender) && gender.ToUpper() == genderIsReal[i])
                 {
-                    case "М":
-                        return true;
-                    case "Ж":
-                        return true;
-                    case "МУЖ":
-                        return true;
-                    case "ЖЕН":
-                        return true;
-                    case "МУЖЧИНА":
-                        return true;
-                    case "ЖЕНЩИНА":
-                        return true;
-                    case "M":
-                        return true;
-                    case "W":
-                        return true;
-                    case "MAN":
-                        return true;
-                    case "WOMAN":
-                        return true;
-                    case "BOY":
-                        return true;
-                    case "GIRL":
-                        return true;
-                    default:
-                        sb.AppendLine("Это абракадабра, введите свой пол.");
-                        return false;
-                }                         
+                    return true;
+                }
             }
-            else
-            {
-                sb.AppendLine("Пол не введен.");
-                return false;
-            }
+            sb.AppendLine("Введите пол");
+            return false;            
         }
 
         public abstract bool Validate();        

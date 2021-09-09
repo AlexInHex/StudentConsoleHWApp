@@ -15,7 +15,7 @@ namespace StudentConsoleHWApp.Validator
 
         public override bool Validate()
         {
-            return (IdValidation(param[1]));
+            return IdValidation(param[1]);
            
         }        
     }
